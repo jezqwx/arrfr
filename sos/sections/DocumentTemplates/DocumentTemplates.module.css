@@ -1,0 +1,35 @@
+/* src/sections/DocumentTemplates/DocumentTemplates.module.css */
+
+.section {
+  background: var(--color-white);
+  padding: var(--space-18) var(--space-10);
+}
+
+.container {
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* ── Responsive ─────────────────── */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-12) 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

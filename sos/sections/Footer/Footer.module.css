@@ -1,0 +1,172 @@
+/* src/sections/Footer/Footer.module.css */
+
+.footer {
+  background: var(--color-navy);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 52px var(--space-10) 28px;
+}
+
+.container {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+/* ── Grid ───────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* ── Brand ──────────────────────── */
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brandDesc {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  max-width: 240px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── Social ─────────────────────── */
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.socialBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+  color: var(--color-white);
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Link groups ────────────────── */
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groupTitle {
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footerLink:hover {
+  color: var(--color-white);
+}
+
+/* ── Contacts column ────────────── */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.phone {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+/* ── Bottom bar ─────────────────── */
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.legalLink {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.legalLink:hover {
+  color: var(--color-white);
+}
+
+/* ── Responsive ─────────────────── */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 20px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

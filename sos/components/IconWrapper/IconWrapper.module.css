@@ -1,0 +1,52 @@
+/* src/components/IconWrapper/IconWrapper.module.css */
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Variants ───────────────────── */
+
+.navy {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.cream {
+  background: var(--color-icon-bg);
+  color: var(--color-navy);
+}
+
+.transparent {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+/* ── Sizes ──────────────────────── */
+
+.sm {
+  width: 36px;
+  height: 36px;
+}
+
+.md {
+  width: 44px;
+  height: 44px;
+}
+
+.lg {
+  width: 48px;
+  height: 48px;
+}
+
+/* ── Shapes ─────────────────────── */
+
+.rounded {
+  border-radius: var(--radius-lg);
+}
+
+.circle {
+  border-radius: var(--radius-full);
+}

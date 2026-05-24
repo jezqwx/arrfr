@@ -1,0 +1,36 @@
+/* src/components/SectionHeader/SectionHeader.module.css */
+
+.header {
+  margin-bottom: 44px;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-size: var(--text-md);
+  color: var(--color-text-mid);
+  line-height: 1.6;
+}
+
+/* ── Responsive ─────────────────── */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 22px;
+  }
+}

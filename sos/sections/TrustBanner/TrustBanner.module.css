@@ -1,0 +1,63 @@
+/* src/sections/TrustBanner/TrustBanner.module.css */
+
+.section {
+  background: var(--color-cream);
+  padding: var(--space-18) var(--space-10);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.topIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--color-navy);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 28px 20px;
+}
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: var(--text-lg);
+  color: var(--color-text-dark);
+  margin-bottom: 6px;
+}
+
+.cardDesc {
+  font-size: var(--text-base);
+  color: var(--color-text-mid);
+}
+
+/* ── Responsive ─────────────────── */
+
+@media (max-width: 640px) {
+  .section {
+    padding: var(--space-12) 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
