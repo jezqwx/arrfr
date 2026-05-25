@@ -1,11 +1,21 @@
-import HomePage from "./pages/HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <MainLayout>
-      <HomePage />
-    </MainLayout>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/check" element={<div>Центр проверки</div>} />
+          <Route path="/marketplace" element={<div>Маркетплейс</div>} />
+          <Route path="/education" element={<div>Обучение</div>} />
+          <Route path="/instruments" element={<div>Инструменты</div>} />
+          <Route path="/faq" element={<div>FAQ</div>} />
+        </Routes>
+      </MainLayout>
+    </BrowserRouter>
   );
 }
 

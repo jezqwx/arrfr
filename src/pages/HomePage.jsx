@@ -18,9 +18,6 @@ import {
   mdiArrowTopRight
 } from "@mdi/js";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
 import { getHomeContent } from "../services/fingramotaApi";
 
 const cards = [
@@ -178,9 +175,6 @@ useEffect(() => {
 
   return (
     <>
-      <Header />
-
-      <main>
         <section className="hero">
           <div className="hero-left">
             <div className="portal-badge">● ОФИЦИАЛЬНЫЙ ГОСУДАРСТВЕННЫЙ ПОРТАЛ</div>
@@ -361,9 +355,6 @@ useEffect(() => {
             <img src="/map.svg" alt="Инклюзивная карта" />
           </div>
         </section>
-      </main>
-
-      <Footer />
     </>
   );
 }

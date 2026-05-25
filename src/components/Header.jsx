@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   mdiMagnify,
   mdiWeb,
@@ -16,12 +17,12 @@ export default function Header() {
         </div>
 
         <nav className="header-nav">
-          <a href="#">Главное</a>
-          <a href="#">Центр проверки</a>
-          <a href="#">Маркетплейс</a>
-          <a href="#">Обучение</a>
-          <a href="#">Инструменты</a>
-          <a href="#">FAQ</a>
+          <Link to="/">Главное</Link>
+          <Link to="/check">Центр проверки</Link>
+          <Link to="/marketplace">Маркетплейс</Link>
+          <Link to="/education">Обучение</Link>
+          <Link to="/instruments">Инструменты</Link>
+          <Link to="/faq">FAQ</Link>
         </nav>
 
         <div className="header-actions">

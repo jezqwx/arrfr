@@ -37,15 +37,15 @@ export default function Footer() {
             <a href="#">Вакансии</a>
             <a href="#">Партнеры</a>
             <a href="#">О проекте</a>
-            <a href="#">Новости</a>
+            <a href="/news">Новости</a>
           </div>
 
           <div className="footer-column">
             <h4>Инструменты</h4>
-            <a href="#">Кредитный калькулятор</a>
-            <a href="#">Проверка брокера</a>
-            <a href="#">Сообщить о мошенничестве</a>
-            <a href="#">Финансовый словарь</a>
+            <a href="/instruments/calculator">Кредитный калькулятор</a>
+            <a href="/instruments/broker-check">Проверка брокера</a>
+            <a href="/fraud-report">Сообщить о мошенничестве</a>
+            <a href="/dictionary">Финансовый словарь</a>
           </div>
 
           <div className="footer-column contacts">
