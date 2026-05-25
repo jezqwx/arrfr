@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import InstrumentsPage from "./pages/InstrumentsPage";
+import FaqPage from "./pages/FaqPage";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path="/marketplace" element={<div>Маркетплейс</div>} />
           <Route path="/education" element={<div>Обучение</div>} />
           <Route path="/instruments" element={<InstrumentsPage />} />
-          <Route path="/faq" element={<div>FAQ</div>} />
+          <Route path="/faq" element={<FaqPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

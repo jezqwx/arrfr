@@ -111,21 +111,13 @@ a {
   animation-delay: 5s;
 }
 
-@keyframes floatingCard {
+@keyframes floatlicensecard {
   0% {
     transform: translateY(0px);
   }
 
-  25% {
-    transform: translateY(-6px);
-  }
-
   50% {
-    transform: translateY(2px);
-  }
-
-  75% {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
   }
 
   100% {
@@ -133,13 +125,25 @@ a {
   }
 }
 
-.license-card,
-.calc-card {
-  animation: floatingCard 5s ease-in-out infinite;
+@keyframes floatcalccard {
+  0% {
+    transform: translateY(0px);
+  }
 
-  box-shadow:
-    0 10px 30px rgba(255,255,255,0.05),
-    0 4px 12px rgba(0,0,0,0.18);
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+.license-card {
+  animation: floatlicensecard 4s ease-in-out infinite;
+}
+
+.calc-card {
+  animation: floatcalccard 5s ease-in-out infinite;
 }
 
 .hero::before {
@@ -1322,3 +1326,33 @@ a {
   font-size: 14px;
 }
 
+.page-reveal {
+  animation: pageReveal 0.75s ease both;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: revealUp 0.75s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
