@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MdiIcon from "../components/MdiIcon";
 
 import {
@@ -107,6 +108,8 @@ function useReveal(delay = 0) {
 }
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   const [news, setNews] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
 
@@ -207,10 +210,13 @@ export default function HomePage() {
             style={heroButtons.style}
             className="hero-buttons"
           >
-            <button className="sos-btn">
-              <MdiIcon path={mdiAlertOutline} size={1} />
-              SOS ситуация
-            </button>
+          <button
+            className="sos-btn"
+            onClick={() => navigate("/sos")}
+          >
+            <MdiIcon path={mdiAlertOutline} size={30} />
+            SOS ситуация
+          </button>
 
             <button className="start-btn">Начать курс</button>
           </div>

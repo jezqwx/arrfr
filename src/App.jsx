@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import InstrumentsPage from "./pages/InstrumentsPage";
 import FaqPage from "./pages/FaqPage";
+import SosPage from "./pages/SosPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/education" element={<div>Обучение</div>} />
           <Route path="/instruments" element={<InstrumentsPage />} />
           <Route path="/faq" element={<FaqPage />} />
+          <Route path="/sos" element={<SosPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
