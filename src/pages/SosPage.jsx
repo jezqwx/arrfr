@@ -110,6 +110,12 @@ const DOCUMENT_TEMPLATES = [
       { url: "/documents/банкжалоба_каз.pdf",                                 filename: "Банкқа_шағым.pdf" },
     ],
   },
+  {
+    icon: mdiScaleBalance,
+    title: "Жалоба регулятору",
+    description: "Документ для защиты прав потребителя финансовых услуг.",
+    files: [], // прикрепишь позже
+  },
 ];
 
 const AGENT_FEATURES = [
