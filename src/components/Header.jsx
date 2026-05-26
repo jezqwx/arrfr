@@ -35,10 +35,10 @@ export default function Header() {
             <span>RU</span>
           </div>
 
-          <button className="cabinet-btn">
+          <Link to="/profile" className="cabinet-btn">
             <MdiIcon path={mdiAccountOutline} size={17} />
             <span>Личный кабинет</span>
-          </button>
+          </Link>
         </div>
       </div>
     </header>
