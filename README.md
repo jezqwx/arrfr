@@ -1,5 +1,3 @@
-Замени весь `README.md` на это:
-
 ````md
 # FinGramota Frontend MVP
 
