@@ -96,19 +96,19 @@ const DOCUMENT_TEMPLATES = [
     icon: mdiFileDocumentOutline,
     title: "Заявление о мошенничестве",
     description: "Шаблон для обращения в правоохранительные органы.",
-    filename: "fraud-claim.docx",
+    files: [
+      { url: "/documents/Заявление.pdf",                    filename: "Заявление_о_мошенничестве.pdf" },
+      { url: "/documents/Заявление_каз.pdf",       filename: "ҚЫЛМЫСТЫҚ_ҚҰҚЫҚ_БҰЗУШЫЛЫҚ_ТУРАЛЫ_АРЫЗ.pdf" },
+    ],
   },
   {
     icon: mdiBank,
     title: "Обращение в банк",
     description: "Форма для срочной блокировки операции или карты.",
-    filename: "bank-request.docx",
-  },
-  {
-    icon: mdiScaleBalance,
-    title: "Жалоба регулятору",
-    description: "Документ для защиты прав потребителя финансовых услуг.",
-    filename: "regulator-complaint.docx",
+    files: [
+      { url: "/documents/банкжалоба.pdf",     filename: "ЖАЛОБА_на_неправомерные_действия_банка.pdf" },
+      { url: "/documents/банкжалоба_каз.pdf",                                 filename: "Банкқа_шағым.pdf" },
+    ],
   },
 ];
 
@@ -232,20 +232,16 @@ function ContactCard({ icon, title, subtitle, hours, phone }) {
   );
 }
 
-function DocCard({ icon, title, description, filename }) {
-  const handleDownload = () => {
-    const blob = new Blob([`Шаблон документа: ${title}`], {
-      type: "text/plain;charset=utf-8",
+function DocCard({ icon, title, description, files }) {
+  const handleDownloadAll = () => {
+    files.forEach(({ url, filename }) => {
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
-
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.download = filename;
-    link.click();
-
-    URL.revokeObjectURL(url);
   };
 
   return (
@@ -259,7 +255,7 @@ function DocCard({ icon, title, description, filename }) {
         <p>{description}</p>
       </div>
 
-      <button type="button" onClick={handleDownload}>
+      <button type="button" onClick={handleDownloadAll}>
         <MdiIcon path={mdiDownload} size={18} />
         Скачать
       </button>
