@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import InstrumentsPage from "./pages/InstrumentsPage";
 import FaqPage from "./pages/FaqPage";
 import SosPage from "./pages/SosPage";
+import VerificationCenter from "./pages/VerificationCenter";
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/check" element={<div>Центр проверки</div>} />
+          <Route path="/check" element={<VerificationCenter />} />
           <Route path="/marketplace" element={<div>Маркетплейс</div>} />
           <Route path="/education" element={<div>Обучение</div>} />
           <Route path="/instruments" element={<InstrumentsPage />} />
