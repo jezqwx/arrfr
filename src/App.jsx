@@ -5,6 +5,7 @@ import InstrumentsPage from "./pages/InstrumentsPage";
 import FaqPage from "./pages/FaqPage";
 import SosPage from "./pages/SosPage";
 import VerificationCenter from "./pages/VerificationCenter";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/instruments" element={<InstrumentsPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/sos" element={<SosPage />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
