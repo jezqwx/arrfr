@@ -6,7 +6,8 @@ import FaqPage from "./pages/FaqPage";
 import SosPage from "./pages/SosPage";
 import VerificationCenter from "./pages/VerificationCenter";
 import Profile from "./pages/Profile";
-
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage    from "./pages/LoginPage";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/sos" element={<SosPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login"    element={<LoginPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>

@@ -102,7 +102,6 @@ function PersonalTab() {
             className="profile-input"
             type="tel"
             value={form.phone}
-            placeholder="example@mail.com"
             placeholder="+7 (___) ___-__-__"
             onChange={handleChange("phone")}
           />
@@ -132,7 +131,7 @@ function PersonalTab() {
               <option>Шымкент</option>
               <option>Қарағанды</option>
             </select>
-            <MdiIcon path={mdiChevronDown} size={0.9} className="profile-select-icon" />
+            <MdiIcon path={mdiChevronDown} size={20} className="profile-select-icon" />
           </div>
         </div>
       </div>
@@ -167,7 +166,7 @@ function SettingsTab() {
       {/* Notifications */}
       <div className="profile-settings-group">
         <h3 className="profile-settings-title">
-          <MdiIcon path={mdiBellOutline} size={0.9} />
+          <MdiIcon path={mdiBellOutline} size={20} />
           Уведомления
         </h3>
         <div className="profile-settings-divider" />
@@ -189,18 +188,18 @@ function SettingsTab() {
       {/* Security */}
       <div className="profile-settings-group">
         <h3 className="profile-settings-title">
-          <MdiIcon path={mdiLockOutline} size={0.9} />
+          <MdiIcon path={mdiLockOutline} size={20} />
           Безопасность
         </h3>
         <div className="profile-settings-divider" />
 
         <div className="profile-security-btns">
           <button className="profile-btn profile-btn--outline" type="button">
-            <MdiIcon path={mdiEyeOutline} size={0.85} />
+            <MdiIcon path={mdiEyeOutline} size={20} />
             Изменить пароль
           </button>
           <button className="profile-btn profile-btn--outline" type="button">
-            <MdiIcon path={mdiShieldOutline} size={0.85} />
+            <MdiIcon path={mdiShieldOutline} size={20} />
             Настроить двухфакторную аутентификацию
           </button>
         </div>
@@ -210,7 +209,7 @@ function SettingsTab() {
       <div className="profile-settings-bottom">
         <div className="profile-settings-group profile-settings-group--half">
           <h3 className="profile-settings-title">
-            <MdiIcon path={mdiTranslate} size={0.9} />
+            <MdiIcon path={mdiTranslate} size={20} />
             Язык интерфейса
           </h3>
           <div className="profile-settings-divider" />
@@ -223,13 +222,13 @@ function SettingsTab() {
               <option value="ru">Русский</option>
               <option value="kz">Қазақша</option>
             </select>
-            <MdiIcon path={mdiChevronDown} size={0.9} className="profile-select-icon" />
+            <MdiIcon path={mdiChevronDown} size={20} className="profile-select-icon" />
           </div>
         </div>
 
         <div className="profile-settings-group profile-settings-group--half">
           <h3 className="profile-settings-title">
-            <MdiIcon path={mdiPaletteOutline} size={0.9} />
+            <MdiIcon path={mdiPaletteOutline} size={20} />
             Тема оформления
           </h3>
           <div className="profile-settings-divider" />
@@ -267,7 +266,7 @@ function Profile() {
           {/* User card */}
           <div className="profile-user-card">
             <div className="profile-avatar">
-              <MdiIcon path={mdiAccountOutline} size={2.2} />
+              <MdiIcon path={mdiAccountOutline} size={52} />
             </div>
             <h2 className="profile-user-name">{USER.name}</h2>
             <span className="profile-user-badge">{USER.badge}</span>
@@ -290,7 +289,7 @@ function Profile() {
             </div>
 
             <button className="profile-logout" type="button">
-              <MdiIcon path={mdiLogoutVariant} size={0.9} />
+              <MdiIcon path={mdiLogoutVariant} size={20} />
               Выйти с аккаунта
             </button>
           </div>
@@ -332,7 +331,7 @@ function Profile() {
             </div>
 
             <div className="profile-achievements-empty">
-              <MdiIcon path={mdiTrophyOutline} size={2} />
+              <MdiIcon path={mdiTrophyOutline} size={48} />
               <p>
                 Здесь будут отображаться ваши достижения после прохождения
                 курсов, тестов и других активностей.
