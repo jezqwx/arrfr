@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MdiIcon from "../components/MdiIcon";
 import {
   mdiAlertOutline,
@@ -9,31 +9,101 @@ import {
 import "./VerificationCenter.css";
 import background from "/13-background.svg";
 
+function useRevealOnScroll() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return {
+    ref,
+    className: visible ? "reveal revealVisible" : "reveal",
+  };
+}
+
+function useFadeOnScroll() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return {
+    ref,
+    className: visible ? "revealFade revealFadeVisible" : "revealFade",
+  };
+}
 // ── Hero ─────────────────────────────────────────────
 
 export function HeroBanner() {
   const [value, setValue] = useState("");
 
+  const bgReveal = useFadeOnScroll();
+  const titleReveal = useRevealOnScroll();
+  const subReveal = useRevealOnScroll();
+  const inputReveal = useRevealOnScroll();
+
   return (
     <section className="heroBanner">
-      <div className="bgImage" aria-hidden="true">
-          <img src={background} alt="" className="bgImg" />
+      <div
+        ref={bgReveal.ref}
+        className={`bgImage ${bgReveal.className}`}
+      >
+        <img src={background} alt="" className="bgImg" />
       </div>
 
       <div className="content">
-        <h1 className="title">
+        <h1
+          ref={titleReveal.ref}
+          className={`title ${titleReveal.className}`}
+          style={{ transitionDelay: "100ms" }}
+        >
           Перехват —<br />
           остановите риск<br />
           до потери денег
         </h1>
 
-        <p className="sub">
+        <p
+          ref={subReveal.ref}
+          className={`sub ${subReveal.className}`}
+          style={{ transitionDelay: "220ms" }}
+        >
           Проверьте компанию, номер телефона или сайт за<br />
           10 секунд
         </p>
 
-        <div className="inputRow">
+        <div
+          ref={inputReveal.ref}
+          className={`inputRow ${inputReveal.className}`}
+          style={{ transitionDelay: "340ms" }}
+        >
           <input
             className="input"
             type="text"
@@ -52,7 +122,7 @@ export function HeroBanner() {
   );
 }
 
-// ── Data ───────────рпппрр──────────────────────────────────
+// ── Data ─────────────────────────────────────────────
 
 const TYPES = [
   {
@@ -94,11 +164,39 @@ const TRAINING_CARDS = [
   },
 ];
 
+function TrainerCard({ card, delay = 0 }) {
+  const reveal = useRevealOnScroll();
+
+  return (
+    <article
+      ref={reveal.ref}
+      className={`trainerCard ${
+        card.variant === "dark" ? "trainerCardDark" : "trainerCardLight"
+      } ${reveal.className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <div className="trainerIcon">
+        <MdiIcon path={mdiAlertOutline} size={24} />
+      </div>
+
+      <div>
+        <h3>{card.title}</h3>
+        <p>{card.text}</p>
+      </div>
+    </article>
+  );
+}
+
 export function VigilanceTrainerBanner() {
+  const headerReveal = useRevealOnScroll();
+
   return (
     <section className="trainerBanner">
       <div className="trainerInner">
-        <div className="trainerHeader">
+        <div
+          ref={headerReveal.ref}
+          className={`trainerHeader ${headerReveal.className}`}
+        >
           <h2 className="trainerTitle">Тренажёр бдительности</h2>
           <p className="trainerSubtitle">
             Чат-симулятор: мошенник пишет вам в реальном времени, индикатор угрозы нарастает
@@ -112,22 +210,8 @@ export function VigilanceTrainerBanner() {
         </div>
 
         <div className="trainerGrid">
-          {TRAINING_CARDS.map((card) => (
-            <article
-              key={card.title}
-              className={`trainerCard ${
-                card.variant === "dark" ? "trainerCardDark" : "trainerCardLight"
-              }`}
-            >
-              <div className="trainerIcon">
-                <MdiIcon path={mdiAlertOutline} size={24} />
-              </div>
-
-              <div>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-              </div>
-            </article>
+          {TRAINING_CARDS.map((card, index) => (
+            <TrainerCard key={card.title} card={card} delay={index * 100} />
           ))}
         </div>
       </div>
@@ -138,6 +222,10 @@ export function VigilanceTrainerBanner() {
 export default function VerificationCenter() {
   const [activeId, setActiveId] = useState("license");
   const [value, setValue] = useState("");
+
+  const headerReveal = useRevealOnScroll();
+  const sidebarReveal = useRevealOnScroll();
+  const panelReveal = useRevealOnScroll();
 
   const active = TYPES.find((type) => type.id === activeId);
 
@@ -151,7 +239,10 @@ export default function VerificationCenter() {
       <HeroBanner />
 
       <section className="section">
-        <div className="header">
+        <div
+          ref={headerReveal.ref}
+          className={`header ${headerReveal.className}`}
+        >
           <h2 className="title">Центр проверки</h2>
           <p className="subtitle">
             Выберите тип проверки и получите мгновенную диагностику
@@ -159,7 +250,11 @@ export default function VerificationCenter() {
         </div>
 
         <div className="body">
-          <aside className="sidebar">
+          <aside
+            ref={sidebarReveal.ref}
+            className={`sidebar ${sidebarReveal.className}`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <p className="sidebarLabel">Типы проверки</p>
 
             <ul className="typeList" role="list">
@@ -192,7 +287,11 @@ export default function VerificationCenter() {
             </ul>
           </aside>
 
-          <div className="panel">
+          <div
+            ref={panelReveal.ref}
+            className={`panel ${panelReveal.className}`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <h3 className="panelTitle">{active.title}</h3>
 
             <div className="inputRow">
