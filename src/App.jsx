@@ -8,6 +8,8 @@ import VerificationCenter from "./pages/VerificationCenter";
 import Profile from "./pages/Profile";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage    from "./pages/LoginPage";
+import CoursesPage from "./pages/CoursesPage";
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login"    element={<LoginPage />} />
+          <Route path="/mycourses" element={<CoursesPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
