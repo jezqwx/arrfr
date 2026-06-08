@@ -9,6 +9,8 @@ import Profile from "./pages/Profile";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage    from "./pages/LoginPage";
 import CoursesPage from "./pages/CoursesPage";
+import MarketplacePage from "./pages/MarketplacePage";
+
 
 
 function App() {
@@ -18,7 +20,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/check" element={<VerificationCenter />} />
-          <Route path="/marketplace" element={<div>Маркетплейс</div>} />
           <Route path="/education" element={<div>Обучение</div>} />
           <Route path="/instruments" element={<InstrumentsPage />} />
           <Route path="/faq" element={<FaqPage />} />
@@ -27,6 +28,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login"    element={<LoginPage />} />
           <Route path="/mycourses" element={<CoursesPage />} />
+          <Route path="/marketplace" element={<MarketplacePage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
