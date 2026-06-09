@@ -1210,6 +1210,11 @@ a {
   gap: 16px;
 }
 
+body {
+  margin: 0;
+  padding-top: 64px;
+}
+
 .inclusive-buttons button {
   height: 58px;
   border: 0;
@@ -1254,7 +1259,7 @@ a {
 }
 
 .map-card {
-  width: 800px;
+  width: 400px;
   height: 500px;
   border-radius: 22px;
   overflow: hidden;

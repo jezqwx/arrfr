@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./MarketplacePage.css";
 import MdiIcon from "../components/MdiIcon";
 import {
@@ -404,6 +405,18 @@ function BankCard({ bank, open, onToggle, delay = 0 }) {
 
 // ── Main page ──────────────────────────────────────────────────────
 export default function MarketplacePage() {
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.hash === "#calculator") {
+    setTimeout(() => {
+      document.getElementById("calculator")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
+}, [location]);
   const [activeTab,   setActiveTab]   = useState("credits");
   const [openBanks,   setOpenBanks]   = useState({});
   const [search,      setSearch]      = useState("");
@@ -575,7 +588,7 @@ export default function MarketplacePage() {
       </section>
 
       {/* ── Calculator ── */}
-      <section className="mp-calc-section">
+      <section id="calculator" className="mp-calc-section">
         <img src="/bg-mrkp-calc.svg"  alt="" className="mp-calc__bg" />
         <h2
           ref={calcTitleReveal.ref}

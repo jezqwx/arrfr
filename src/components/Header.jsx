@@ -5,6 +5,7 @@ import {
   mdiAccountOutline,
 } from "@mdi/js";
 
+import { NavLink } from "react-router-dom";
 import MdiIcon from "./MdiIcon";
 import "./Header.css";
 
@@ -17,12 +18,59 @@ export default function Header() {
       </Link>
 
         <nav className="header-nav">
-          <Link to="/home">Главное</Link>
-          <Link to="/check">Центр проверки</Link>
-          <Link to="/marketplace">Маркетплейс</Link>
-          <Link to="/education">Обучение</Link>
-          <Link to="/instruments">Инструменты</Link>
-          <Link to="/faq">FAQ</Link>
+        <NavLink
+  to="/home"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  Главное
+</NavLink>
+
+          <NavLink
+  to="/check"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  Центр проверки
+</NavLink>
+
+<NavLink
+  to="/marketplace"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  Маркетплейс
+</NavLink>
+
+<NavLink
+  to="/education"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  Обучение
+</NavLink>
+
+<NavLink
+  to="/instruments"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  Инструменты
+</NavLink>
+
+<NavLink
+  to="/faq"
+  className={({ isActive }) =>
+    isActive ? "nav-link nav-link-active" : "nav-link"
+  }
+>
+  FAQ
+</NavLink>
         </nav>
 
         <div className="header-actions">

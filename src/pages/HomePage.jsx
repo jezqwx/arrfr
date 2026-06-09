@@ -316,7 +316,12 @@ export default function HomePage() {
             предоставляет актуальную и проверенную информацию.
           </p>
 
-          <button className="hero-btn">Калькулятор</button>
+                  <button
+          className="hero-btn"
+          onClick={() => navigate("/marketplace#calculator")}
+        >
+          Калькулятор
+        </button>
         </div>
       </section>
 
