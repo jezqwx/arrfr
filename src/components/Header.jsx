@@ -12,12 +12,12 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="header-content">
-        <div className="brand">
-          <img src="/logo.svg" alt="FinGramota" />
-        </div>
+      <Link to="/home" className="brand">
+        <img src="/logo.svg" alt="FinGramota" />
+      </Link>
 
         <nav className="header-nav">
-          <Link to="/">Главное</Link>
+          <Link to="/home">Главное</Link>
           <Link to="/check">Центр проверки</Link>
           <Link to="/marketplace">Маркетплейс</Link>
           <Link to="/education">Обучение</Link>

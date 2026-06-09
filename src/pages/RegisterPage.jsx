@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./auth.css";
 
 import MdiIcon from "../components/MdiIcon";
@@ -79,6 +79,8 @@ function PasswordRules({ password }) {
 }
 
 export default function RegisterPage() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -116,7 +118,13 @@ export default function RegisterPage() {
             полезным инструментам финансовой грамотности.
           </p>
 
-          <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+          <form
+  className="auth-form"
+  onSubmit={(e) => {
+    e.preventDefault();
+    navigate("/home");
+  }}
+>
             <div className="auth-field">
               <label className="auth-label" htmlFor="reg-first">Имя</label>
               <input id="reg-first" className="auth-input" type="text"

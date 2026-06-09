@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./auth.css";
+import { Link, useNavigate } from "react-router-dom";
 
 import MdiIcon from "../components/MdiIcon";
 import {
@@ -34,6 +34,7 @@ function PasswordInput({ value, onChange, placeholder, id }) {
 }
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     login: "",
     password: "",
@@ -45,6 +46,7 @@ export default function LoginPage() {
       ...p,
       [field]: e.target.type === "checkbox" ? e.target.checked : e.target.value,
     }));
+
 
   return (
     <div className="auth-page">
@@ -73,7 +75,16 @@ export default function LoginPage() {
           полезным инструментам финансовой грамотности.
         </p>
 
-        <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+        <form
+  className="auth-form"
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    // здесь потом будет API авторизации
+
+    navigate("/home");
+  }}
+>
           <div className="auth-field">
             <label className="auth-label" htmlFor="login-email">
               Логин/email

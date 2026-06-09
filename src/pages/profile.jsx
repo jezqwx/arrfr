@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./profile.css";
 
 import MdiIcon from "../components/MdiIcon";
@@ -254,7 +255,8 @@ function SettingsTab() {
 
 // ── Main component ─────────────────────────────────────────────────
 function Profile() {
-  const [tab, setTab] = useState("personal"); // "personal" | "settings"
+  const navigate = useNavigate();
+  const [tab, setTab] = useState("personal");
 
   return (
     <div className="profile-page">
@@ -288,10 +290,14 @@ function Profile() {
               </div>
             </div>
 
-            <button className="profile-logout" type="button">
-              <MdiIcon path={mdiLogoutVariant} size={20} />
-              Выйти с аккаунта
-            </button>
+          <button
+            className="profile-logout"
+            type="button"
+            onClick={() => navigate("/login")}
+          >
+            <MdiIcon path={mdiLogoutVariant} size={20} />
+            Выйти с аккаунта
+          </button>
           </div>
 
         </aside>

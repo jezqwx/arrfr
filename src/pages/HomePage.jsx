@@ -27,21 +27,25 @@ const cards = [
     icon: mdiCreditCardOutline,
     title: "Маркетплейс",
     text: "Планирование доходов и расходов, финансовые цели и полезные привычки для стабильного бюджета.",
+    path: "/marketplace",
   },
   {
     icon: mdiBookOpenPageVariantOutline,
     title: "Обучение",
     text: "Что важно учитывать перед оформлением кредита, как читать договор и оценивать условия.",
+    path: "/education",
   },
   {
     icon: mdiShieldCheckOutline,
     title: "Безопасность",
     text: "Как распознать мошенничество, защитить карты, счета и персональные данные.",
+    path: "/check",
   },
   {
     icon: mdiCardAccountDetailsOutline,
     title: "Инструменты",
     text: "Банковские карты, депозиты, страхование и другие финансовые услуги простым языком.",
+    path: "/instruments",
   },
 ];
 
@@ -294,10 +298,10 @@ export default function HomePage() {
 
               <p>{card.text}</p>
 
-              <button className="more-btn">
-                <span>Подробнее</span>
-                <MdiIcon path={mdiArrowTopRight} size={14} />
-              </button>
+            <button className="more-btn" onClick={() => navigate(card.path)}>
+              <span>Подробнее</span>
+              <MdiIcon path={mdiArrowTopRight} size={14} />
+            </button>
             </article>
           ))}
         </div>
