@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import CoursesPage from "./pages/CoursesPage";
 import LearningPage from "./pages/LearningPage";
 import GamifiedPage from "./pages/GamifiedPage";
+import MarketplacePage from "./pages/MarketplacePage";
 import Profile from "./pages/profile";
 
 function App() {
@@ -22,96 +23,16 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
 
-        <Route
-          path="/home"
-          element={
-            <MainLayout>
-              <HomePage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-        path="/profile"
-        element={
-          <MainLayout>
-            <Profile />
-          </MainLayout>
-        }
-      />
-      
-
-        <Route
-          path="/check"
-          element={
-            <MainLayout>
-              <VerificationCenter />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/marketplace"
-          element={
-            <MainLayout>
-              <div>Маркетплейс</div>
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/education"
-          element={
-            <MainLayout>
-              <LearningPage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/instruments"
-          element={
-            <MainLayout>
-              <InstrumentsPage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/faq"
-          element={
-            <MainLayout>
-              <FaqPage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/sos"
-          element={
-            <MainLayout>
-              <SosPage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/mycourses"
-          element={
-            <MainLayout>
-              <CoursesPage />
-            </MainLayout>
-          }
-        />
-
-        <Route
-          path="/gamified"
-          element={
-            <MainLayout>
-              <GamifiedPage />
-            </MainLayout>
-          }
-        />
+        <Route path="/home" element={<MainLayout><HomePage /></MainLayout>} />
+        <Route path="/profile" element={<MainLayout><Profile /></MainLayout>} />
+        <Route path="/check" element={<MainLayout><VerificationCenter /></MainLayout>} />
+        <Route path="/marketplace" element={<MainLayout><MarketplacePage /></MainLayout>} />
+        <Route path="/education" element={<MainLayout><LearningPage /></MainLayout>} />
+        <Route path="/instruments" element={<MainLayout><InstrumentsPage /></MainLayout>} />
+        <Route path="/faq" element={<MainLayout><FaqPage /></MainLayout>} />
+        <Route path="/sos" element={<MainLayout><SosPage /></MainLayout>} />
+        <Route path="/mycourses" element={<MainLayout><CoursesPage /></MainLayout>} />
+        <Route path="/gamified" element={<MainLayout><GamifiedPage /></MainLayout>} />
       </Routes>
     </BrowserRouter>
   );
